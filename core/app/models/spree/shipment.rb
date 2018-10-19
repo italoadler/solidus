@@ -186,7 +186,7 @@ module Spree
     end
 
     def item_cost
-      line_items.map(&:total).sum
+      manifest.map { |m| (m.line_item.price + (m.line_item.adjustment_total / m.line_item.quantity)) * m.quantity }.sum
     end
 
     def ready_or_pending?
