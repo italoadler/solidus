@@ -412,14 +412,14 @@ module Spree
     # @!attribute [rw] variant_gallery_class
     # @return [Class] a class that implements an `images` method and returns an
     # Enumerable of images adhering to the present_image_class interface
-    class_name_attribute :variant_gallery_class, default: 'Spree::Gallery::VariantGallery'
+    class_name_attribute :variant_gallery_class, default: 'SolidusPaperclip::Gallery::Variant'
 
     # Allows providing your own class for image galleries on Products
     #
     # @!attribute [rw] product_gallery_class
     # @return [Class] a class that implements an `images` method and returns an
     # Enumerable of images adhering to the present_image_class interface
-    class_name_attribute :product_gallery_class, default: 'Spree::Gallery::ProductGallery'
+    class_name_attribute :product_gallery_class, default: 'SolidusPaperclip::Gallery::Product'
 
     # Allows providing your own class instance for generating order numbers.
     #

@@ -398,7 +398,7 @@ module Spree
     # The gallery for the variant, which represents all the images
     # associated with it
     #
-    # @return [Spree::Gallery] the media for a variant
+    # @return [Spree::Config.variant_gallery_class] the media for a variant
     def gallery
       @gallery ||= Spree::Config.variant_gallery_class.new(self)
     end
