@@ -28,6 +28,9 @@ gem 'simplecov', require: false
 gem 'with_model', require: false
 gem 'rails-controller-testing', require: false
 
+# TODO: remove once the extension has been extracted from the repo
+gem 'solidus_paperclip', path: './solidus_paperclip'
+
 group :backend, :frontend do
   gem 'capybara', '~> 2.15', require: false
   gem 'capybara-screenshot', '>= 1.0.18', require: false
