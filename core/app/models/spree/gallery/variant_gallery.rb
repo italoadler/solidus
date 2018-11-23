@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
+require 'solidus_paperclip'
+require 'solidus_paperclip/gallery'
+
 module Spree
   module Gallery
-    class VariantGallery
-      def initialize(variant)
-        @variant = variant
-      end
-
-      # A list of all images associated with this gallery
-      #
-      # @return [Enumerable<Spree::Image>] all images in the gallery
-      def images
-        @images ||= @variant.images
+    class VariantGallery < SolidusPaperclip::Gallery::Variant
+      def initialize(*)
+        ::Spree::Deprecation.warn("Spree::Gallery::VariantGallery is deprecated use SolidusPaperclip::Gallery::Variant instead")
+        super
       end
     end
   end

@@ -7,6 +7,13 @@ RSpec.describe Spree::Gallery::VariantGallery do
   let(:gallery) { described_class.new(variant) }
   let(:variant) { Spree::Variant.new }
 
+  it 'is deprecated' do
+    expect(Spree::Deprecation).to receive(:warn) do |message|
+      expect(message).to match(/SolidusPaperclip::Gallery::Variant\b/)
+    end
+    gallery
+  end
+
   shared_context 'has multiple images' do
     let(:first_image) { build(:image) }
     let(:second_image) { build(:image) }
@@ -17,5 +24,8 @@ RSpec.describe Spree::Gallery::VariantGallery do
     end
   end
 
-  it_behaves_like 'a gallery'
+  context '(with silenced deprecation)' do
+    before { allow(::Spree::Deprecation).to receive(:warn).and_return(nil) }
+    it_behaves_like 'a gallery'
+  end
 end

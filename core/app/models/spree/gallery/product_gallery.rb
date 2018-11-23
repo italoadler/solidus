@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
+require 'solidus_paperclip'
+require 'solidus_paperclip/gallery'
+
 module Spree
   module Gallery
-    class ProductGallery
-      def initialize(product)
-        @product = product
-      end
-
-      # A list of all images associated with this gallery
-      #
-      # @return [Enumerable<Spree::Image>] all images in the gallery
-      def images
-        @images ||= @product.variant_images
+    class ProductGallery < SolidusPaperclip::Gallery::Product
+      def initialize(*)
+        ::Spree::Deprecation.warn("Spree::Gallery::ProductGallery is deprecated use SolidusPaperclip::Gallery::Product instead")
+        super
       end
     end
   end
