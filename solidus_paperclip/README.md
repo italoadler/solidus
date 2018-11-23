@@ -1,7 +1,7 @@
 SolidusPaperclip
 ================
 
-Introduction goes here.
+This is a Solidus extension that supports Paperclip in legacy projects as the image/gallery manager. Paperclip has been officially deprecated and maintenance has been discontinued (see https://github.com/thoughtbot/paperclip#deprecated).
 
 Installation
 ------------
@@ -36,4 +36,4 @@ Simply add this require statement to your spec_helper:
 require 'solidus_paperclip/factories'
 ```
 
-Copyright (c) 2018 [name of extension creator], released under the New BSD License
+Copyright (c) 2018 Nebulab Srls & the Solidus Team, released under the New BSD License
